@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace TcpChat_Server
 {
@@ -30,22 +30,48 @@ namespace TcpChat_Server
 
             Socket socket_client = socket.Accept();
 
-
             Console.WriteLine("Клиент на связи");
 
+
+            Thread threadReceive = new Thread(ReceiveMessageForManager);
+            threadReceive.Start(socket_client);
+
+            Thread threadSend = new Thread(SendMessageForManager);
+            threadSend.Start(socket_client);
+
+
+            
+            Console.ReadLine();
+        }
+
+
+
+        public static string ReceiveMessage(Socket socket)
+        {
+            byte[] bytes = new byte[1024];
+            int num_bytes = socket.Receive(bytes);
+            return Encoding.Unicode.GetString(bytes, 0, num_bytes);
+        }
+        public static void ReceiveMessageForManager(Object socket)
+        {
             while (true)
             {
-                byte[] bytes = new byte[1024];
-                int num_bytes = socket_client.Receive(bytes);
-                string textFromClient = Encoding.Unicode.GetString(bytes, 0, num_bytes);
-                Console.WriteLine(textFromClient);
-
-                string message = Console.ReadLine();
-                byte[] bytess = Encoding.Unicode.GetBytes(message);
-                socket_client.Send(bytess);
-
+                Console.WriteLine("Client: " + ReceiveMessage((Socket)socket));
             }
-            Console.ReadLine();
+        }
+
+
+        public static void SendMessage(Socket socket, string message)
+        {
+            byte[] bytess = Encoding.Unicode.GetBytes(message);
+            socket.Send(bytess);
+        }
+        public static void SendMessageForManager(Object socket)
+        {
+            while (true)
+            {
+                SendMessage((Socket)socket, Console.ReadLine());
+            }        
         }
     }
 }

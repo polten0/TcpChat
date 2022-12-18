@@ -25,22 +25,43 @@ namespace TcpChat_Client
 
             socket_sender.Connect(endRemoutePoint);
 
-            while (true)
-            {
-                string message = Console.ReadLine();
-                byte[] bytes = Encoding.Unicode.GetBytes(message);
-                socket_sender.Send(bytes);
-                Console.WriteLine(message + " Было отправлено");
+            Action<Socket> taskSendMessage = SendMessageForTask;
+            IAsyncResult res1 = taskSendMessage.BeginInvoke(socket_sender, null, null);
 
-                byte[] byte_answers = new byte[1024];
-                int num_bytes = socket_sender.Receive(byte_answers);
-                string textFromClient = Encoding.Unicode.GetString(byte_answers, 0, num_bytes);
-                Console.WriteLine(textFromClient);
-                Console.WriteLine();
-            }
+            Action<Socket> taskReceiveMessage = ReceiveMessageForTask;
+            IAsyncResult res2 = taskReceiveMessage.BeginInvoke(socket_sender, null, null);
 
+
+            taskSendMessage.EndInvoke(res1);
+            taskReceiveMessage.EndInvoke(res2);
 
             Console.ReadLine();
+        }
+
+        public static void SendMessage(Socket socket, string message)
+        {
+            byte[] bytess = Encoding.Unicode.GetBytes(message);
+            socket.Send(bytess);
+        }
+        public static void SendMessageForTask(Socket socket)
+        {
+            while (true)
+            {
+                SendMessage(socket, Console.ReadLine());
+            }
+        }
+        public static string ReceiveMessage(Socket socket)
+        {
+            byte[] bytes = new byte[1024];
+            int num_bytes = socket.Receive(bytes);
+            return Encoding.Unicode.GetString(bytes, 0, num_bytes);
+        }
+        public static void ReceiveMessageForTask(Socket socket)
+        {
+            while (true)
+            {
+                Console.WriteLine("Server: "+ ReceiveMessage(socket));
+            }
         }
     }
 }
