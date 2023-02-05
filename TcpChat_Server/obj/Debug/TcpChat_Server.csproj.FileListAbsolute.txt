@@ -5,3 +5,9 @@ C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\obj\Debug\TcpChat_Server.csp
 C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\obj\Debug\TcpChat_Server.csproj.CoreCompileInputs.cache
 C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\obj\Debug\TcpChat_Server.exe
 C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\obj\Debug\TcpChat_Server.pdb
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\bin\Debug\TcpChat_Library.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\bin\Debug\TcpChat_Library.pdb
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\bin\Debug\TcpChat_Library.dll.config
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Server\obj\Debug\TcpChat_Server.csproj.CopyComplete

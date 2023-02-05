@@ -1,0 +1,12 @@
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\TcpChat_Library.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\TcpChat_Library.pdb
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\obj\Debug\TcpChat_Library.csproj.AssemblyReference.cache
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\obj\Debug\TcpChat_Library.csproj.CoreCompileInputs.cache
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\obj\Debug\TcpChat_Library.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\obj\Debug\TcpChat_Library.pdb
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\TcpChat_Library.dll.config
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\Alexey\source\repos\TcpChat\TcpChat_Library\bin\Debug\Newtonsoft.Json.Bson.xml
